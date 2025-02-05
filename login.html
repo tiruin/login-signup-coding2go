@@ -39,6 +39,11 @@
                     this.errors.push('Email is required');
                     this.isInvalidEmail = true;
                 }
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!regex.test(this.email)){
+                    this.errors.push('Format email is invalid');
+                    this.isInvalidEmail = true;
+                }
                 if (this.password === '' || this.password === null) {
                     this.errors.push('Password is required');
                     this.isInvalidPassword = true;
@@ -47,7 +52,7 @@
                     this.errors.push('Password must be at least 8 characters');
                     this.isInvalidPassword = true;
                 }
-                
+
                 if (this.errors.length > 0) {
                     e.preventDefault();
                     this.errorMessage = this.errors.join('. ');

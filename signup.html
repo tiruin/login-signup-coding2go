@@ -49,6 +49,11 @@
                     this.errors.push('Email is required');
                     this.isInvalidEmail = true;
                 }
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!regex.test(this.email)){
+                    this.errors.push('Format email is invalid');
+                    this.isInvalidEmail = true;
+                }
                 if (this.password === '' || this.password === null) {
                     this.errors.push('Password is required');
                     this.isInvalidPassword = true;
