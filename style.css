@@ -624,6 +624,9 @@
   .bg-\[url\(background\.jpg\)\] {
     background-image: url(background.jpg);
   }
+  .bg-\[url\(original\/background\.jpg\)\] {
+    background-image: url(original/background.jpg);
+  }
   .bg-cover {
     background-size: cover;
   }
